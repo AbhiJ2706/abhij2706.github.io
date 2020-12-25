@@ -1,4 +1,5 @@
 function ProjectDiv(props){
+    console.log(props.h1);
     return (<h1>doot</h1>);
   }
   
