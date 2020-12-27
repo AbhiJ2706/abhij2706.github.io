@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+        <link
+            async
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.css"
+        />
+        <script
+            async
+            src="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.js"
+        ></script>
+    </head>
+    <body>
+        <div id="parent" style="position: relative; min-height: 100vh; display: block">
+            <div id="root" style="min-height: 100vh; display: flex; flex-direction: column;">
+                <p>will the rest render?</p>
+            </div>
+            <script>
+                async function test() {
+                    const model = await tf.loadLayersModel('model.json');
+                }
+
+                test();
+            </script>
+            <script src="projects.mjs"></script>
+            <footer style="background-color: #1E1E1F; height: 30%; position: relative; left:0; bottom:0; right:0; display:block">
+                <div class="ui buttons" style="width: 24%; margin-left: 38%; margin-right: 38%">
+                    <div class="massive ui animated button" style="background-color:#1E1E1F !important; float:left" tabindex="0" onclick='{window.location.href="https://github.com/AbhiJ2706"}'>
+                        <div class="visible content">
+                            <i class="github icon" style="color: #ffffff !important"></i>
+                        </div>
+                        <div class="hidden content">
+                            <i class="external alternate icon" style="color: #ffffff !important"></i>
+                        </div>
+                    </div>
+                    <div class="massive ui animated button" style="background-color:#1E1E1F !important; float:right" tabindex="0" onclick='{window.location.href="https://www.linkedin.com/in/abhi-jain-9057961b7/"}'>
+                        <div class="visible content">
+                            <i class="linkedin icon" style="color: #ffffff !important"></i>
+                        </div>
+                        <div class="hidden content">
+                            <i class="external alternate icon" style="color: #ffffff !important"></i>
+                        </div>
+                    </div>
+                </div>
+                <p style="color: #ffffff !important; text-align: center; padding-top: 3%">Made with &hearts; using React and Semantic UI by Abhinav Jain</p>
+            </footer>
+        </div>
+    </body>
+</html>

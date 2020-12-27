@@ -8,7 +8,7 @@ class ProjectDiv extends React.Component {
     render() {
         return e(
             'div',
-            {style: {width: '100%', height: '50%'}},
+            {style: {width: '100%', height: '50%', display: "block"}},
             e(ProjectSubDiv, {float: 'left', el: this.props.insideL}, null),
             e(ProjectSubDiv, {float: 'right', el: this.props.insideR}, null)
         );
