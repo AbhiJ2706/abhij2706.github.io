@@ -70,9 +70,33 @@ class ProjectTextBtnContainer extends React.Component {
             e('h1', {style: {fontSize: "96px", marginTop: "25%", textAlign: 'center'}}, this.props.headerText),
             e('p', {style: {marginLeft: "20%", marginRight: "20%", textAlign: 'center', width: '60%'}}, this.props.pText), 
             e('div', {style: {height: '10%', width: "40%", marginLeft: "30%", marginRight: "30%"}}, 
-                         e('button', {class: "ui button", onClick: () => {window.location.href = this.props.link1}, style: {height: "75%", width: '50%', margin: "auto", float: "left"}}, this.props.b1Text),
-                         e('button', {class: "ui button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '50%', margin: "auto", float: "right"}}, this.props.b2Text))
+                         e('button', {className: "ui button", onClick: () => {window.location.href = this.props.link1}, style: {height: "75%", width: '50%', margin: "auto", float: "left"}}, this.props.b1Text),
+                         e('button', {className: "ui button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '50%', margin: "auto", float: "right"}}, this.props.b2Text))
         )
+    }
+}
+
+var cid = -1;
+
+keys = [0, 1, 2, 3, 4];
+
+function moveUp(){
+    if (cid > -1){
+        console.log(window.location.href)
+        cid -= 1;
+        var newId = cid.toString();
+        window.location.href = "#" + newId;
+        console.log(cid)
+    }
+}
+
+function moveDown(){
+    if (cid < keys.length - 1){
+        console.log(window.location.href)
+        cid += 1;
+        var newId = cid.toString();
+        window.location.href = "#" + newId;
+        console.log(cid, keys.length)
     }
 }
 
@@ -92,10 +116,9 @@ const postItems = [e(ProjectDiv, {key : 0, id: 0, insideL: x, insideR: i}, null)
                    e(ProjectDiv, {key : 2, id: 2, insideL: x, insideR: i}, null),
                    e(ProjectDiv, {key : 3, id: 3, insideL: i, insideR: x}, null),
                    e(ProjectDiv, {key : 4, id: 4, insideL: x, insideR: i}, null),
-                   e('button', {key: 10000, class: "ui icon button", style: {right: 8, bottom: 8, position: "fixed"}}, e('i', {class: "angle double down icon"}, null))];
-
-keys = [0, 1, 2, 3, 4]
-
-
+                   
+                   e('div', {key: 10000, className: "vertical", style: {right: 8, bottom: 8, position: "fixed"} }, 
+                            e('button', {onClick: () => {moveUp()}, className: "ui icon button"}, e('i', {className: "angle double up icon"}, null)),
+                            e('button', {onClick: () => {moveDown()}, className: "ui icon button"}, e('i', {className: "angle double down icon"}, null)))];
 
 ReactDOM.render(postItems, domContainer);
