@@ -70,8 +70,8 @@ class ProjectTextBtnContainer extends React.Component {
             e('h1', {style: {fontSize: "96px", marginTop: "25%", textAlign: 'center'}}, this.props.headerText),
             e('p', {style: {marginLeft: "20%", marginRight: "20%", textAlign: 'center', width: '60%'}}, this.props.pText), 
             e('div', {style: {height: '10%', width: "40%", marginLeft: "30%", marginRight: "30%"}}, 
-                         e('button', {onClick: () => {window.location.href = this.props.link1}, style: {height: "75%", width: '50%', margin: "auto", float: "left"}}, this.props.b1Text),
-                         e('button', {onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '50%', margin: "auto", float: "right"}}, this.props.b2Text))
+                         e('button', {class: "ui button", onClick: () => {window.location.href = this.props.link1}, style: {height: "75%", width: '50%', margin: "auto", float: "left"}}, this.props.b1Text),
+                         e('button', {class: "ui button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '50%', margin: "auto", float: "right"}}, this.props.b2Text))
         )
     }
 }

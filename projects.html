@@ -21,39 +21,42 @@
         ></script>
     </head>
     <body>
-        <div id="parent" style="position: relative; min-height: 100vh; display: block">
-            <div id="root" style="min-height: 100vh; display: flex; flex-direction: column;">
-                <p>will the rest render?</p>
-            </div>
-            <script>
-                async function test() {
-                    const model = await tf.loadLayersModel('model.json');
-                }
-
-                test();
-            </script>
-            <script src="projects.mjs"></script>
-            <footer style="background-color: #1E1E1F; height: 30%; position: relative; left:0; bottom:0; right:0; display:block">
-                <div class="ui buttons" style="width: 24%; margin-left: 38%; margin-right: 38%">
-                    <div class="massive ui animated button" style="background-color:#1E1E1F !important; float:left" tabindex="0" onclick='{window.location.href="https://github.com/AbhiJ2706"}'>
-                        <div class="visible content">
-                            <i class="github icon" style="color: #ffffff !important"></i>
-                        </div>
-                        <div class="hidden content">
-                            <i class="external alternate icon" style="color: #ffffff !important"></i>
-                        </div>
-                    </div>
-                    <div class="massive ui animated button" style="background-color:#1E1E1F !important; float:right" tabindex="0" onclick='{window.location.href="https://www.linkedin.com/in/abhi-jain-9057961b7/"}'>
-                        <div class="visible content">
-                            <i class="linkedin icon" style="color: #ffffff !important"></i>
-                        </div>
-                        <div class="hidden content">
-                            <i class="external alternate icon" style="color: #ffffff !important"></i>
-                        </div>
-                    </div>
-                </div>
-                <p style="color: #ffffff !important; text-align: center; padding-top: 3%">Made with &hearts; using React and Semantic UI by Abhinav Jain</p>
-            </footer>
+        <div id="menubar" class="ui secondary menu" style="width: 100%;">
+            <a class="item" href="index.html" style="width: 33%">Home</button>
+            <a class="active item" style="width: 33%">Projects</button>
+            <a class="item" style="width: 33%">Demos</button>
         </div>
+        <div id="root" style="min-height: 100vh; display: flex; flex-direction: column;">
+            <p>will the rest render?</p>
+        </div>
+        <script>
+            async function test() {
+                const model = await tf.loadLayersModel('model.json');
+            }
+
+            test();
+        </script>
+        <script src="projects.mjs"></script>
     </body>
+    <footer style="background-color: #1E1E1F; height: 30%; position: relative; left:0; bottom:0; right:0; display:block">
+        <div class="ui buttons" style="width: 24%; margin-left: 38%; margin-right: 38%">
+            <div class="massive ui animated button" style="background-color:#1E1E1F !important; float:left" tabindex="0" onclick='{window.location.href="https://github.com/AbhiJ2706"}'>
+                <div class="visible content">
+                    <i class="github icon" style="color: #ffffff !important"></i>
+                </div>
+                <div class="hidden content">
+                    <i class="external alternate icon" style="color: #ffffff !important"></i>
+                </div>
+            </div>
+            <div class="massive ui animated button" style="background-color:#1E1E1F !important; float:right" tabindex="0" onclick='{window.location.href="https://www.linkedin.com/in/abhi-jain-9057961b7/"}'>
+                <div class="visible content">
+                    <i class="linkedin icon" style="color: #ffffff !important"></i>
+                </div>
+                <div class="hidden content">
+                    <i class="external alternate icon" style="color: #ffffff !important"></i>
+                </div>
+            </div>
+        </div>
+        <p style="color: #ffffff !important; text-align: center; padding-top: 3%">Made with &hearts; using React and Semantic UI by Abhinav Jain</p>
+    </footer>
 </html>
