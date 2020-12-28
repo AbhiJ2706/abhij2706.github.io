@@ -8,7 +8,7 @@ class ProjectDiv extends React.Component {
     render() {
         return e(
             'div',
-            {style: {width: '100%', height: '50%', display: "block"}},
+            {id: this.props.id, style: {width: '100%', height: '50%', display: "block"}},
             e(ProjectSubDiv, {float: 'left', el: this.props.insideL}, null),
             e(ProjectSubDiv, {float: 'right', el: this.props.insideR}, null)
         );
@@ -87,10 +87,15 @@ const x = e(ProjectTextBtnContainer, {headerText: "please",
 
 const i = e(ProjectPicContainer, {src: "images/eight.png"}, null)
 
-const postItems = [e(ProjectDiv, {key : 0, insideL: x, insideR: i}, null),
-                   e(ProjectDiv, {key : 0, insideL: i, insideR: x}, null),
-                   e(ProjectDiv, {key : 0, insideL: x, insideR: i}, null),
-                   e(ProjectDiv, {key : 0, insideL: i, insideR: x}, null),
-                   e(ProjectDiv, {key : 0, insideL: x, insideR: i}, null)];
+const postItems = [e(ProjectDiv, {key : 0, id: 0, insideL: x, insideR: i}, null),
+                   e(ProjectDiv, {key : 1, id: 1, insideL: i, insideR: x}, null),
+                   e(ProjectDiv, {key : 2, id: 2, insideL: x, insideR: i}, null),
+                   e(ProjectDiv, {key : 3, id: 3, insideL: i, insideR: x}, null),
+                   e(ProjectDiv, {key : 4, id: 4, insideL: x, insideR: i}, null),
+                   e('button', {key: 10000, class: "ui icon button", style: {right: 8, bottom: 8, position: "fixed"}}, e('i', {class: "angle double down icon"}, null))];
+
+keys = [0, 1, 2, 3, 4]
+
+
 
 ReactDOM.render(postItems, domContainer);
