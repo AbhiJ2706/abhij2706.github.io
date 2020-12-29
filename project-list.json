@@ -1,0 +1,23 @@
+projectListData = [{
+    "0" : {
+        "header": "this is a test",
+        "pText": "a test to show that this json poc works. according to all known laws of aviation, a bee should not be able to fly.",
+        "b1Text": "View on GitHub",
+        "b2Text": "View on Colab",
+        "link1": "https://github.com/abhij2706",
+        "link2": "https;//bit.ly",
+        "pType": "0",
+        "src": "images/eight.png"
+    },
+    "1" : {
+        "header": "this is another test",
+        "pText": "another test to show that this json poc works. according to all known laws of aviation, a bee should not be able to fly",
+        "b1Text": "View on Github",
+        "b2Text": "View on Colab",
+        "link1": "https://github.com/abhij2706",
+        "link2": "https://bit.ly",
+        "pType": "1",
+        "src": "res/test.html"
+    }
+
+}];

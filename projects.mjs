@@ -1,3 +1,7 @@
+const projectData = projectListData[0];
+
+console.log(projectData)
+
 const e = React.createElement;
 
 class ProjectDiv extends React.Component {
@@ -51,9 +55,9 @@ class ProjectDispContainer extends React.Component {
 
   render() {
       return e(
-          'div',
-          {style: {width: "60%", marginLeft: "20%", marginRight: '20%', marginTop: '20%', marginBottom: '20%'}},
-          this.props.inEl
+          'embed',
+          {src: "res/test.html", style: {border: "1px solid black", width: "60%", height: "60%", marginLeft: "20%", marginRight: '20%', marginTop: '20%', marginBottom: '20%'}},
+          null
       )
   }
 }
@@ -109,13 +113,15 @@ const x = e(ProjectTextBtnContainer, {headerText: "please",
                                       link1: "https://bit.ly", 
                                       link2: "https://bit.ly"}, null)
 
+const d = e(ProjectDispContainer, {src: "res/test.html"}, null)
+
 const i = e(ProjectPicContainer, {src: "images/eight.png"}, null)
 
-const postItems = [e(ProjectDiv, {key : 0, id: 0, insideL: x, insideR: i}, null),
+const postItems = [e(ProjectDiv, {key : 0, id: 0, insideL: x, insideR: d}, null),
                    e(ProjectDiv, {key : 1, id: 1, insideL: i, insideR: x}, null),
-                   e(ProjectDiv, {key : 2, id: 2, insideL: x, insideR: i}, null),
+                   e(ProjectDiv, {key : 2, id: 2, insideL: x, insideR: d}, null),
                    e(ProjectDiv, {key : 3, id: 3, insideL: i, insideR: x}, null),
-                   e(ProjectDiv, {key : 4, id: 4, insideL: x, insideR: i}, null),
+                   e(ProjectDiv, {key : 4, id: 4, insideL: x, insideR: d}, null),
                    
                    e('div', {key: 10000, className: "vertical", style: {right: 8, bottom: 8, position: "fixed"} }, 
                             e('button', {onClick: () => {moveUp()}, className: "ui icon button"}, e('i', {className: "angle double up icon"}, null)),
