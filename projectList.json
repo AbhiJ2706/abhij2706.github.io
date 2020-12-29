@@ -1,5 +1,4 @@
-projectListData = [{
-    "0" : {
+{"data" : [{
         "header": "this is a test",
         "pText": "a test to show that this json poc works. according to all known laws of aviation, a bee should not be able to fly.",
         "b1Text": "View on GitHub",
@@ -9,7 +8,7 @@ projectListData = [{
         "pType": "0",
         "src": "images/eight.png"
     },
-    "1" : {
+    {
         "header": "this is another test",
         "pText": "another test to show that this json poc works. according to all known laws of aviation, a bee should not be able to fly",
         "b1Text": "View on Github",
@@ -18,6 +17,4 @@ projectListData = [{
         "link2": "https://bit.ly",
         "pType": "1",
         "src": "res/test.html"
-    }
-
-}];
+    }]}

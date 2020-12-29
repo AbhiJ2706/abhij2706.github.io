@@ -1,4 +1,28 @@
-const projectData = projectListData[0];
+const projectData = 
+[{
+    "header": "this is a test",
+    "pText": "a test to show that this json poc works. according to all known laws of aviation, a bee should not be able to fly.",
+    "b1Text": "View on GitHub",
+    "b2Text": "View on Colab",
+    "b1Color": "black", 
+    "b2Color": "yellow", 
+    "link1": "https://github.com/abhij2706",
+    "link2": "https;//bit.ly",
+    "pType": "0",
+    "src": "images/eight.png",
+},
+{
+    "header": "this is another test",
+    "pText": "another test to show that this json poc works. according to all known laws of aviation, a bee should not be able to fly",
+    "b1Text": "View on Github",
+    "b2Text": "View on Colab",
+    "b1Color": "black", 
+    "b2Color": "yellow",
+    "link1": "https://github.com/abhij2706",
+    "link2": "https://bit.ly",
+    "pType": "1",
+    "src": "res/test.html"
+}];
 
 console.log(projectData)
 
@@ -71,18 +95,16 @@ class ProjectTextBtnContainer extends React.Component {
         return e(
             'div',
             {},
-            e('h1', {style: {fontSize: "96px", marginTop: "25%", textAlign: 'center'}}, this.props.headerText),
+            e('h1', {style: {fontSize: "96px", marginTop: "20%", textAlign: 'center'}}, this.props.headerText),
             e('p', {style: {marginLeft: "20%", marginRight: "20%", textAlign: 'center', width: '60%'}}, this.props.pText), 
             e('div', {style: {height: '10%', width: "40%", marginLeft: "30%", marginRight: "30%"}}, 
-                         e('button', {className: "ui button", onClick: () => {window.location.href = this.props.link1}, style: {height: "75%", width: '50%', margin: "auto", float: "left"}}, this.props.b1Text),
-                         e('button', {className: "ui button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '50%', margin: "auto", float: "right"}}, this.props.b2Text))
+                         e('button', {className: "ui " + this.props.b1Color + " button", onClick: () => {window.location.href = this.props.link1}, style: {height: "75%", width: '47%', margin: "auto", float: "left"}}, this.props.b1Text),                                                    
+                         e('button', {className: "ui " + this.props.b2Color + " button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '47%', margin: "auto", float: "right"}}, this.props.b2Text))
         )
     }
 }
 
 var cid = -1;
-
-keys = [0, 1, 2, 3, 4];
 
 function moveUp(){
     if (cid > -1){
@@ -95,7 +117,7 @@ function moveUp(){
 }
 
 function moveDown(){
-    if (cid < keys.length - 1){
+    if (cid < projectData.length - 1){
         console.log(window.location.href)
         cid += 1;
         var newId = cid.toString();
@@ -106,25 +128,46 @@ function moveDown(){
 
 const domContainer = document.querySelector('#root');
 
-const x = e(ProjectTextBtnContainer, {headerText: "please", 
-                                      pText: "according to all known laws of aviation, bees should not be able to fly. please work textalign oh god oh please", 
-                                      b1Text: "please", 
-                                      b2Text: "work", 
-                                      link1: "https://bit.ly", 
-                                      link2: "https://bit.ly"}, null)
+function projectDivCreate(){
+    var toRender = [];
+    console.log(projectData.length)
+    for (var i = 0; i < projectData.length; i++){
+        var entireDiv;
+        var textDiv;
+        var dispDiv;
+        var inputData = projectData[i];
+        if (inputData.pType == "0"){
+            dispDiv = e(ProjectPicContainer, {src: inputData.src}, null)
+        } else {
+            dispDiv = e(ProjectDispContainer, {src: inputData.src}, null)
+        }
+        textDiv = e(ProjectTextBtnContainer, {headerText: inputData.header, 
+                                              pText: inputData.pText,
+                                              b1Text: inputData.b1Text,
+                                              b1Color: inputData.b1Color, 
+                                              b2Color: inputData.b2Color, 
+                                              b2Text: inputData.b2Text, 
+                                              link1: inputData.link1, 
+                                              link2: inputData.link2}, null)
+        if (i % 2 == 0){
+            entireDiv = e(ProjectDiv, {key : i, id: i, insideL: textDiv, insideR: dispDiv}, null)
+        } else {
+            entireDiv = e(ProjectDiv, {key : i, id: i, insideL: dispDiv, insideR: textDiv}, null)
+        }
+        toRender.push(entireDiv)
+        console.log(toRender)
+    }
+    return toRender
+}
 
-const d = e(ProjectDispContainer, {src: "res/test.html"}, null)
+var postItems = projectDivCreate()
 
-const i = e(ProjectPicContainer, {src: "images/eight.png"}, null)
+postItems.push(
+    e('div', {key: 10000, className: "vertical", style: {right: 8, bottom: 8, position: "fixed"} }, 
+            e('button', {onClick: () => {moveUp()}, className: "ui icon button"}, e('i', {className: "angle double up icon"}, null)),
+            e('button', {onClick: () => {moveDown()}, className: "ui icon button"}, e('i', {className: "angle double down icon"}, null))));
 
-const postItems = [e(ProjectDiv, {key : 0, id: 0, insideL: x, insideR: d}, null),
-                   e(ProjectDiv, {key : 1, id: 1, insideL: i, insideR: x}, null),
-                   e(ProjectDiv, {key : 2, id: 2, insideL: x, insideR: d}, null),
-                   e(ProjectDiv, {key : 3, id: 3, insideL: i, insideR: x}, null),
-                   e(ProjectDiv, {key : 4, id: 4, insideL: x, insideR: d}, null),
-                   
-                   e('div', {key: 10000, className: "vertical", style: {right: 8, bottom: 8, position: "fixed"} }, 
-                            e('button', {onClick: () => {moveUp()}, className: "ui icon button"}, e('i', {className: "angle double up icon"}, null)),
-                            e('button', {onClick: () => {moveDown()}, className: "ui icon button"}, e('i', {className: "angle double down icon"}, null)))];
+console.log(postItems)
 
-ReactDOM.render(postItems, domContainer);
+
+ReactDOM.render(postItems, domContainer)
