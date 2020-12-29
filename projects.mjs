@@ -10,18 +10,17 @@ const projectData =
     "link2": "https;//bit.ly",
     "pType": "0",
     "src": "images/eight.png",
+    "numBtn": "2"
 },
 {
     "header": "this is another test",
     "pText": "another test to show that this json poc works. according to all known laws of aviation, a bee should not be able to fly",
     "b1Text": "View on Github",
-    "b2Text": "View on Colab",
     "b1Color": "black", 
-    "b2Color": "yellow",
     "link1": "https://github.com/abhij2706",
-    "link2": "https://bit.ly",
     "pType": "1",
-    "src": "res/test.html"
+    "src": "res/test.html",
+    "numBtn": "1"
 }];
 
 console.log(projectData)
@@ -97,9 +96,10 @@ class ProjectTextBtnContainer extends React.Component {
             {},
             e('h1', {style: {fontSize: "96px", marginTop: "20%", textAlign: 'center'}}, this.props.headerText),
             e('p', {style: {marginLeft: "20%", marginRight: "20%", textAlign: 'center', width: '60%'}}, this.props.pText), 
-            e('div', {style: {height: '10%', width: "40%", marginLeft: "30%", marginRight: "30%"}}, 
-                         e('button', {className: "ui " + this.props.b1Color + " button", onClick: () => {window.location.href = this.props.link1}, style: {height: "75%", width: '47%', margin: "auto", float: "left"}}, this.props.b1Text),                                                    
-                         e('button', {className: "ui " + this.props.b2Color + " button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '47%', margin: "auto", float: "right"}}, this.props.b2Text))
+            e('div', {style: {display: "flex", alignItems: "center", height: '10%', width: "40%", marginLeft: "30%", marginRight: "30%"}}, 
+                         e('button', {className: "ui " + this.props.b1Color + " button", onClick: () => {window.location.href = this.props.link1}, style: {position: "relative", height: "75%", width: '47%', margin: "auto"}}, this.props.b1Text),                                                    
+                         (this.props.numBtn != 1)?
+                         e('button', {className: "ui " + this.props.b2Color + " button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '47%', margin: "auto", float: "right"}}, this.props.b2Text) : null)
         )
     }
 }
@@ -141,14 +141,24 @@ function projectDivCreate(){
         } else {
             dispDiv = e(ProjectDispContainer, {src: inputData.src}, null)
         }
-        textDiv = e(ProjectTextBtnContainer, {headerText: inputData.header, 
-                                              pText: inputData.pText,
-                                              b1Text: inputData.b1Text,
-                                              b1Color: inputData.b1Color, 
-                                              b2Color: inputData.b2Color, 
-                                              b2Text: inputData.b2Text, 
-                                              link1: inputData.link1, 
-                                              link2: inputData.link2}, null)
+        if (inputData.numBtn == 1){
+            textDiv = e(ProjectTextBtnContainer, {headerText: inputData.header, 
+                                                pText: inputData.pText,
+                                                b1Text: inputData.b1Text,
+                                                b1Color: inputData.b1Color, 
+                                                link1: inputData.link1, 
+                                                numBtn: 1}, null)
+        } else {
+            textDiv = e(ProjectTextBtnContainer, {headerText: inputData.header, 
+                                                pText: inputData.pText,
+                                                b1Text: inputData.b1Text,
+                                                b2Text: inputData.b2Text,
+                                                b1Color: inputData.b1Color,
+                                                b2Color: inputData.b2Color, 
+                                                link1: inputData.link1, 
+                                                link2: inputData.link2,
+                                                numBtn: 2}, null)
+        }
         if (i % 2 == 0){
             entireDiv = e(ProjectDiv, {key : i, id: i, insideL: textDiv, insideR: dispDiv}, null)
         } else {
