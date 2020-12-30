@@ -1,27 +1,65 @@
 const projectData = 
 [{
-    "header": "this is a test",
-    "pText": "a test to show that this json poc works. according to all known laws of aviation, a bee should not be able to fly.",
+    "header": "Computer Vision",
+    "pText": "Finds the distance and angle to a target in real-time, using OpenCV. Made to run on a Raspberry Pi, to be used in a project for the UN!",
     "b1Text": "View on GitHub",
-    "b2Text": "View on Colab",
     "b1Color": "black", 
-    "b2Color": "yellow", 
-    "link1": "https://github.com/abhij2706",
-    "link2": "https;//bit.ly",
+    "link1": "https://github.com/AbhiJ2706/mvs_vision_demo",
     "pType": "0",
     "src": "images/eight.png",
-    "numBtn": "2"
-},
-{
-    "header": "this is another test",
-    "pText": "another test to show that this json poc works. according to all known laws of aviation, a bee should not be able to fly",
+    "numBtn": "1"
+},{
+    "header": "Tensorflow Tic-Tac-Toe",
+    "pText": "A Convolutional Neural Network developed using Keras, and trained on a custom dataset, which plays Tic-Tac-Toe!",
     "b1Text": "View on Github",
     "b1Color": "black", 
-    "link1": "https://github.com/abhij2706",
+    "link1": "https://github.com/AbhiJ2706/tic-tac-toe-tensorflow-AI",
     "pType": "1",
     "src": "res/test.html",
     "numBtn": "1"
-}];
+},{
+    "header": "Generate Handwritten digits",
+    "pText": "Gain-Adversarial Neural Network which generates pictures of handwritten digits from noise!",
+    "b1Text": "View on GitHub",
+    "b2Text": "View in Colab",
+    "b1Color": "black", 
+    "b2Color": "yellow", 
+    "link1": "https://github.com/AbhiJ2706/generate-images-AI",
+    "link2": "https://colab.research.google.com/github/AbhiJ2706/generate-images-AI/blob/master/Part_2_generate_handwritten_digits_from_noise_(1).ipynb",
+    "pType": "0",
+    "src": "images/eight.png",
+    "numBtn": "2"
+},{
+    "header": "Lego EV3 Robots",
+    "pText": "Built and programmed an EV3 robot with omnidirectional drive, controlled remotely or autonomously using Python!",
+    "b1Text": "View on GitHub",
+    "b2Text": "View Specs",
+    "b1Color": "black", 
+    "b2Color": "blue", 
+    "link1": "https://github.com/AbhiJ2706/swerve-drive-ev3-python",
+    "link2": "https://docs.google.com/document/d/1UOjyzVWkjb-Cfk4fJmH21MGJ0wl8ht8JOWl_v-BuwAc",
+    "pType": "1",
+    "src": "res/test.html",
+    "numBtn": "2"
+},{
+    "header": "Node Paint Server",
+    "pText": "A full webapp and server, built using Node.js and Express.js, for drawing and sharing pictures! Complete with an account system and gallery.",
+    "b1Text": "View on GitHub",
+    "b1Color": "black", 
+    "link1": "https://github.com/AbhiJ2706/paint-drawing-server",
+    "pType": "0",
+    "src": "images/eight.png",
+    "numBtn": "1"
+},{
+    "header": "Android Paint",
+    "pText": "An Android app for drawing and saving pictures!",
+    "b1Text": "View on GitHub",
+    "b1Color": "black", 
+    "link1": "https://github.com/AbhiJ2706/paint-app-android",
+    "pType": "0",
+    "src": "images/eight.png",
+    "numBtn": "1"
+},];
 
 console.log(projectData)
 
@@ -94,10 +132,10 @@ class ProjectTextBtnContainer extends React.Component {
         return e(
             'div',
             {},
-            e('h1', {style: {fontSize: "96px", marginTop: "20%", textAlign: 'center'}}, this.props.headerText),
+            e('h1', {style: {fontSize: "96px", marginTop: "20%", marginLeft: "10%", width: "80%", textAlign: 'center'}}, this.props.headerText),
             e('p', {style: {marginLeft: "20%", marginRight: "20%", textAlign: 'center', width: '60%'}}, this.props.pText), 
             e('div', {style: {display: "flex", alignItems: "center", height: '10%', width: "40%", marginLeft: "30%", marginRight: "30%"}}, 
-                         e('button', {className: "ui " + this.props.b1Color + " button", onClick: () => {window.location.href = this.props.link1}, style: {position: "relative", height: "75%", width: '47%', margin: "auto"}}, this.props.b1Text),                                                    
+                         e('button', {className: "ui " + this.props.b1Color + " button", onClick: () => {window.location.href = this.props.link1}, style: {position: "relative", height: "75%", width: '47%', margin: "auto"}}, this.props.b1Text),
                          (this.props.numBtn != 1)?
                          e('button', {className: "ui " + this.props.b2Color + " button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '47%', margin: "auto", float: "right"}}, this.props.b2Text) : null)
         )
