@@ -1,3 +1,9 @@
+$.getJSON( "projectList.json", function( json ) {
+    console.log("loaded");
+});
+
+
+
 const projectData = 
 [{
     "header": "Computer Vision",
@@ -21,7 +27,7 @@ const projectData =
     "header": "Generate Handwritten digits",
     "pText": "Gain-Adversarial Neural Network which generates pictures of handwritten digits from noise!",
     "b1Text": "View on GitHub",
-    "b2Text": "View in Colab",
+    "b2Text": "View in Google Colab",
     "b1Color": "black", 
     "b2Color": "yellow", 
     "link1": "https://github.com/AbhiJ2706/generate-images-AI",
@@ -33,7 +39,7 @@ const projectData =
     "header": "Lego EV3 Robots",
     "pText": "Built and programmed an EV3 robot with omnidirectional drive, controlled remotely or autonomously using Python!",
     "b1Text": "View on GitHub",
-    "b2Text": "View Specs",
+    "b2Text": "View Specifications",
     "b1Color": "black", 
     "b2Color": "blue", 
     "link1": "https://github.com/AbhiJ2706/swerve-drive-ev3-python",
@@ -59,6 +65,30 @@ const projectData =
     "pType": "0",
     "src": "images/eight.png",
     "numBtn": "1"
+},{
+    "header": "Robot Code",
+    "pText": "During my time on FRC Team 2706, I worked on programming our team's robot, and a computer vision system for the robot!",
+    "b1Text": "View on GitHub",
+    "b2Text": "Check out the Team",
+    "b1Color": "black", 
+    "b2Color": "purple", 
+    "link1": "https://github.com/FRC2706",
+    "link2": "https://www.team2706.ca/",
+    "pType": "0",
+    "src": "images/eight.png",
+    "numBtn": "2"
+},{
+    "header": "Games!",
+    "pText": "We all need to have some fun. As part of my CS courses, I programmed a variety of games, some for the browser, some for Android! These are pretty old and a bit glitchy, be warned.",
+    "b1Text": "View on GitHub",
+    "b2Text": "View on Google Play",
+    "b1Color": "black", 
+    "b2Color": "green", 
+    "link1": "https://github.com/FRC2706",
+    "link2": "https://github.com/AbhiJ2706?tab=repositories",
+    "pType": "1",
+    "src": "res/test.html",
+    "numBtn": "2"
 },];
 
 console.log(projectData)
@@ -131,13 +161,14 @@ class ProjectTextBtnContainer extends React.Component {
     render (){
         return e(
             'div',
-            {},
-            e('h1', {style: {fontSize: "96px", marginTop: "20%", marginLeft: "10%", width: "80%", textAlign: 'center'}}, this.props.headerText),
+            {style: {display: "flex", justifyContent: "center", alignItems: "center", height: "100vh"}},
+            e("div", {},
+            e('h1', {style: {fontSize: "96px", marginLeft: "10%", width: "80%", textAlign: 'center'}}, this.props.headerText),
             e('p', {style: {marginLeft: "20%", marginRight: "20%", textAlign: 'center', width: '60%'}}, this.props.pText), 
-            e('div', {style: {display: "flex", alignItems: "center", height: '10%', width: "40%", marginLeft: "30%", marginRight: "30%"}}, 
+            e('div', {style: {display: "flex", alignItems: "center", height: '10%', width: "40%", marginLeft: "30%", marginRight: "30%", paddingBottom: "5%"}}, 
                          e('button', {className: "ui " + this.props.b1Color + " button", onClick: () => {window.location.href = this.props.link1}, style: {position: "relative", height: "75%", width: '47%', margin: "auto"}}, this.props.b1Text),
                          (this.props.numBtn != 1)?
-                         e('button', {className: "ui " + this.props.b2Color + " button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '47%', margin: "auto", float: "right"}}, this.props.b2Text) : null)
+                         e('button', {className: "ui " + this.props.b2Color + " button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '47%', margin: "auto", float: "right"}}, this.props.b2Text) : null))
         )
     }
 }
@@ -160,7 +191,6 @@ function moveDown(){
         cid += 1;
         var newId = cid.toString();
         window.location.href = "#" + newId;
-        console.log(cid, keys.length)
     }
 }
 
@@ -214,8 +244,5 @@ postItems.push(
     e('div', {key: 10000, className: "vertical", style: {right: 8, bottom: 8, position: "fixed"} }, 
             e('button', {onClick: () => {moveUp()}, className: "ui icon button"}, e('i', {className: "angle double up icon"}, null)),
             e('button', {onClick: () => {moveDown()}, className: "ui icon button"}, e('i', {className: "angle double down icon"}, null))));
-
-console.log(postItems)
-
 
 ReactDOM.render(postItems, domContainer)
