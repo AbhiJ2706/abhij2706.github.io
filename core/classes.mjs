@@ -8,7 +8,7 @@ class ProjectDiv extends React.Component {
     render() {
         return e(
             'div',
-            {id: this.props.id, style: {width: '100%', height: '50%', display: "block"}},
+            {id: this.props.id, style: {overflow: "hidden", position: "relative", width: '100%', height: '50%', display: "block"}},
             e(ProjectSubDiv, {float: 'left', el: this.props.insideL}, null),
             e(ProjectSubDiv, {float: 'right', el: this.props.insideR}, null)
         );
@@ -25,7 +25,7 @@ class ProjectSubDiv extends React.Component {
             'div',
             {style:{float: this.props.float, display: 'inline-block', width:"49%", position: 'relative'}},
             e('div', {style: {marginTop: '100%'}}, null),
-            e('div', {style: {position: 'absolute', top: 0, bottom: 0, left: 0, right: 0}}, this.props.el)
+            e('div', {style: {display: "inline-block", overflow: "hidden", position: 'absolute', top: 0, bottom: 0, left: 0, right: 0}}, this.props.el)
         );
     }
 }
@@ -38,7 +38,7 @@ class ProjectPicContainer extends React.Component {
     render() {
         return e(
             'img',
-            {src: this.props.src, style: {width: "60%", marginLeft: "20%", marginRight: '20%', marginTop: '20%', marginBottom: '20%'}},
+            {src: this.props.src, style: {width: "80%", marginLeft: "10%", marginRight: '10%', marginTop: '10%', marginBottom: '10%'}},
             null
         )
     }
@@ -52,7 +52,7 @@ class ProjectDispContainer extends React.Component {
   render() {
       return e(
           'embed',
-          {src: "res/test.html", style: {border: "1px solid black", width: "60%", height: "60%", marginLeft: "20%", marginRight: '20%', marginTop: '20%', marginBottom: '20%'}},
+          {src: this.props.src, style: {scrolling: "no", position: "static", overflowY: "hidden", overflow: "hidden", width: "80%", height: "80%", marginLeft: "10%", marginRight: '10%', marginTop: '10%', marginBottom: '10%'}},
           null
       )
   }

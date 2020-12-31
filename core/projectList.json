@@ -39,7 +39,7 @@ var projectData =
     "link1": "https://github.com/AbhiJ2706/swerve-drive-ev3-python",
     "link2": "https://docs.google.com/document/d/1UOjyzVWkjb-Cfk4fJmH21MGJ0wl8ht8JOWl_v-BuwAc",
     "pType": "1",
-    "src": "res/test.html",
+    "src": "res/ev3/ev3.html",
     "numBtn": "2"
 },{
     "header": "Node Paint Server",
@@ -47,8 +47,8 @@ var projectData =
     "b1Text": "View on GitHub",
     "b1Color": "black", 
     "link1": "https://github.com/AbhiJ2706/paint-drawing-server",
-    "pType": "0",
-    "src": "images/eight.png",
+    "pType": "1",
+    "src": "res/node/node.html",
     "numBtn": "1"
 },{
     "header": "Android Paint",
