@@ -1,12 +1,12 @@
 var projectData = 
 [{
     "header": "Computer Vision",
-    "pText": "Finds the distance and angle to a target in real-time, using OpenCV. Made to run on a Raspberry Pi, to be used in a project for the UN!",
+    "pText": "Finds the distance and angle to a target in real-time, using OpenCV. Made to run on a Raspberry Pi, to be used in a project for the UN! I also worked on computer vision for FRC, pictured here.",
     "b1Text": "View on GitHub",
     "b1Color": "black", 
     "link1": "https://github.com/AbhiJ2706/mvs_vision_demo",
-    "pType": "0",
-    "src": "images/eight.png",
+    "pType": "1",
+    "src": "res/vision/vision.html",
     "numBtn": "1"
 },{
     "header": "Tensorflow Tic-Tac-Toe",
@@ -68,8 +68,8 @@ var projectData =
     "b2Color": "purple", 
     "link1": "https://github.com/FRC2706",
     "link2": "https://www.team2706.ca/",
-    "pType": "0",
-    "src": "images/eight.png",
+    "pType": "1",
+    "src": "res/frc/frc.html",
     "numBtn": "2"
 },{
     "header": "Games!",
