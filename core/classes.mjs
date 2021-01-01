@@ -101,7 +101,7 @@ class Scroller {
     }
 
     getButtons(){
-        return e('div', {key: 10000, className: "vertical", style: {right: 8, bottom: 8, position: "fixed"} }, 
+        return e('div', {key: 10000, className: "vertical", style: {width: "3%", right: 4, bottom: 8, position: "fixed"} }, 
                 e('button', {onClick: () => {this.moveUp()}, className: "ui icon button"}, e('i', {className: "angle double up icon"}, null)),
                 e('button', {onClick: () => {this.moveDown()}, className: "ui icon button"}, e('i', {className: "angle double down icon"}, null)))
     }

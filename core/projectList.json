@@ -81,7 +81,7 @@ var projectData =
     "link1": "https://github.com/FRC2706",
     "link2": "https://github.com/AbhiJ2706?tab=repositories",
     "pType": "1",
-    "src": "res/test.html",
+    "src": "res/trivia/trivia.html",
     "numBtn": "2"
 },];
     

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h3>Trivia!</h3>
+        <meta charset="utf-8"/>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+        <link
+            async
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.css"
+        />
+        <script
+            async
+            src="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.js"
+        ></script>
+    </head>
+    <body>
+        <div class="ui blue progress" id="questionSlider">
+            <div class="bar">
+            <div class="progress"></div>
+            </div>
+            <div class="label">Questions Progress</div>
+        </div>
+
+        <div class="ui indicating progress" id="rightSlider">
+            <div class="bar">
+            <div class="progress"></div>
+            </div>
+            <div class="label">Correct Answer Progress</div>
+        </div>
+
+        <div id="questions">
+            <p id="question" style="font-size: 24px">How many questions?</p>
+            <form>
+                <div style="width: 100%">
+                    <input type="radio" id="checkedA" name="option" tabindex="0" class="hidden">
+                    <label style="font-size: 18px; padding-bottom: 10px" id="A">5</label>
+                </div>
+                <div style="width: 100%">
+                    <input type="radio" id="checkedB" name="option" tabindex="0" class="hidden">
+                    <label style="font-size: 18px; padding-bottom: 10%" id="B">10</label>
+                </div>
+                <div style="width: 100%">
+                    <input type="radio" id="checkedC" name="option" tabindex="0" class="hidden">
+                    <label style="font-size: 18px; padding-bottom: 10%" id="C">15</label>
+                </div>
+                <div style="width: 100%">
+                    <input type="radio" id="checkedD" name="option" tabindex="0" class="hidden">
+                    <label style="font-size: 18px; padding-bottom: 10%" id="D">25</label>
+                </div>
+            </form>
+            <button style="margin-top: 2%" class="ui button" onclick="submitQN()">Submit</button>
+        </div>
+
+        <div id="results" style="visibility: hidden;">
+            <p id="result"></p>
+            <button class="ui button" onclick="location.reload(); window.location.href='#7'">Replay</button>
+        </div>
+
+        <script type="text/javascript" src="wwtbam_json_file.json"></script>
+        <script src="trivia.mjs"></script>
+        <script>
+            $('.ui.checkbox').checkbox();
+            $('.ui.checkbox').checkbox();
+            $('.ui.checkbox').checkbox();
+            $('.ui.checkbox').checkbox();
+        </script>
+    </body>
+<html>
