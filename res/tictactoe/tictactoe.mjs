@@ -96,6 +96,9 @@ class Game extends React.Component {
 
         squares[i] = "X";
         squares[oPos] = "O";
+
+        this.board[oPos] = -1;
+        
         this.setState({
             history: history.concat([
                 {
