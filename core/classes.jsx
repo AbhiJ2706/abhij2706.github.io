@@ -23,7 +23,7 @@ class ProjectSubDiv extends React.Component {
     render() {
         return e(
             'div',
-            {style:{float: this.props.float, display: 'inline-block', width:"49%", position: 'relative'}},
+            {style: {float: this.props.float, overflow: "hidden", display: 'inline-block', width:"49%", position: 'relative'}},
             e('div', {style: {marginTop: '100%'}}, null),
             e('div', {style: {display: "inline-block", position: 'absolute', top: 0, bottom: 0, left: 0, right: 0}}, this.props.el)
         );

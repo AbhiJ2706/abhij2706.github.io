@@ -30,6 +30,18 @@ var projectData =
     "src": "images/eight.png",
     "numBtn": "2"
 },{
+    "header": "Stock Prediction",
+    "pText": "Neural network built using LSTM that predicts stock trends! Takes metrics such as price trends, volume trends, and on-balance volume into account. Predictions are not to be trusted.",
+    "b1Text": "View on GitHub",
+    "b2Text": "View in Google Colab",
+    "b1Color": "black", 
+    "b2Color": "yellow", 
+    "link1": "https://github.com/AbhiJ2706/predict-stocks-django-server-AI",
+    "link2": "https://colab.research.google.com/github/AbhiJ2706/predict-stocks-colab/blob/main/stock_tests_finished_predict_future(1).ipynb",
+    "pType": "0",
+    "src": "images/stock.png",
+    "numBtn": "2"
+},{
     "header": "Lego EV3 Robots",
     "pText": "Built and programmed an EV3 robot with omnidirectional drive, controlled remotely or autonomously using Python!",
     "b1Text": "View on GitHub",
@@ -56,8 +68,8 @@ var projectData =
     "b1Text": "View on GitHub",
     "b1Color": "black", 
     "link1": "https://github.com/AbhiJ2706/paint-app-android",
-    "pType": "0",
-    "src": "images/eight.png",
+    "pType": "1",
+    "src": "res/paint/paint.html",
     "numBtn": "1"
 },{
     "header": "Robot Code",
@@ -68,8 +80,8 @@ var projectData =
     "b2Color": "purple", 
     "link1": "https://github.com/FRC2706",
     "link2": "https://www.team2706.ca/",
-    "pType": "1",
-    "src": "res/frc/frc.html",
+    "pType": "0",
+    "src": "images/robot.png",
     "numBtn": "2"
 },{
     "header": "Games!",

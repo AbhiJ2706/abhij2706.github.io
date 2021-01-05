@@ -18,6 +18,12 @@ function indexOfMax(arr) {
     return maxIndex;
 }
 
+function play(){
+    document.getElementById("intro").style.visibility = "hidden"
+    document.getElementById("intro").style.display = "none"
+    document.getElementById("root").style.visibility = "visible"
+}
+
 var model;
 
 async function test() {
@@ -106,15 +112,16 @@ class Game extends React.Component {
 
         let status;
         if (winner) {
-            status = "Winner: " + winner;
+            status = [e("p", {key: 0}, "Winner: " + winner), e("button", {key: 1}, "Play again")];
         } else {
             status = "Next Turn";
         }
 
-        return e("div", {className: "game", style: {width: "100%", height: "100%"}}, 
-                    e("div", {className: "game-board", style: {width: "100%", height: "100%"}}, 
-                        e(Board, {squares: current.squares, onClick: i => this.handleClick(i)})),
-                    e("div", {className: "game-info"}, e("div", {}, status), null))
+        return e("div", {style: {left: 0, top: 0}}, 
+                    e("div", {id: "dash", style: {width: "100%", height: "10%", display: "inline-block", left: 0, top: 0}}, status),
+                    e("div", {className: "game", style: {width: "100%", height: "100%"}}, 
+                    e("div", {className: "game-board", style: {display: "block", width: "100%", height: "100%"}}, 
+                        e(Board, {squares: current.squares, onClick: i => this.handleClick(i)}))))
     }
 }
 
