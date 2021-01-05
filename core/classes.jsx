@@ -8,7 +8,7 @@ class ProjectDiv extends React.Component {
     render() {
         return e(
             'div',
-            {id: this.props.id, style: {overflow: "hidden", position: "relative", width: '100%', height: '50%', display: "block"}},
+            {id: this.props.id, style: {overflow: "hidden", position: "relative", width: '100%', height: '100%', display: "block"}},
             e(ProjectSubDiv, {float: 'left', el: this.props.insideL}, null),
             e(ProjectSubDiv, {float: 'right', el: this.props.insideR}, null)
         );
@@ -25,7 +25,7 @@ class ProjectSubDiv extends React.Component {
             'div',
             {style:{float: this.props.float, display: 'inline-block', width:"49%", position: 'relative'}},
             e('div', {style: {marginTop: '100%'}}, null),
-            e('div', {style: {display: "inline-block", overflow: "hidden", position: 'absolute', top: 0, bottom: 0, left: 0, right: 0}}, this.props.el)
+            e('div', {style: {display: "inline-block", position: 'absolute', top: 0, bottom: 0, left: 0, right: 0}}, this.props.el)
         );
     }
 }
@@ -66,15 +66,13 @@ class ProjectTextBtnContainer extends React.Component {
     render (){
         return e(
             'div',
-            {style: {display: "flex", justifyContent: "center", alignItems: "center", height: "100vh"}},
-            e("div", {},
+            {style: {height: "80%", width: "100%", marginTop: "10%"}},
             e('h1', {style: {fontSize: "96px", marginLeft: "10%", width: "80%", textAlign: 'center'}}, this.props.headerText),
             e('p', {style: {marginLeft: "20%", marginRight: "20%", textAlign: 'center', width: '60%'}}, this.props.pText), 
-            e('div', {style: {display: "flex", alignItems: "center", height: '10%', width: "40%", marginLeft: "30%", marginRight: "30%", paddingBottom: "5%"}}, 
+            e('div', {style: {display: "flex", alignItems: "center", height: '20%', width: "40%", marginLeft: "30%", marginRight: "30%", paddingBottom: "5%"}}, 
                          e('button', {className: "ui " + this.props.b1Color + " button", onClick: () => {window.location.href = this.props.link1}, style: {position: "relative", height: "75%", width: '47%', margin: "auto"}}, this.props.b1Text),
                          (this.props.numBtn != 1)?
                          e('button', {className: "ui " + this.props.b2Color + " button", onClick: () => {window.location.href = this.props.link2}, style: {height: "75%", width: '47%', margin: "auto", float: "right"}}, this.props.b2Text) : null))
-        )
     }
 }
 

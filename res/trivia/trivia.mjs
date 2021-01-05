@@ -26,6 +26,14 @@ function shuffle(a) {
     return a;
 }
 shuffle(myData);
+
+function start(){
+	document.getElementById("title").style.visibility = "hidden"
+	document.getElementById("title").style.display = "none"
+	document.getElementById("game").style.visibility = "visible"
+	document.getElementById("header").style.visibility = "visible"
+	document.getElementById("game").style.display = "block"
+}
 	
 
 function clear(){ 

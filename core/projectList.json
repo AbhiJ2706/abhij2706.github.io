@@ -15,7 +15,7 @@ var projectData =
     "b1Color": "black", 
     "link1": "https://github.com/AbhiJ2706/tic-tac-toe-tensorflow-AI",
     "pType": "1",
-    "src": "res/test.html",
+    "src": "res/tictactoe/tictactoe.html",
     "numBtn": "1"
 },{
     "header": "Generate Handwritten digits",
