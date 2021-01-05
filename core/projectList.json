@@ -14,9 +14,12 @@ var projectData =
     "b1Text": "View on Github",
     "b1Color": "black", 
     "link1": "https://github.com/AbhiJ2706/tic-tac-toe-tensorflow-AI",
+    "b2Text": "View in Google Colab",
+    "b2Color": "yellow",
+    "link2": "https://colab.research.google.com/github/AbhiJ2706/tic-tac-toe-tensorflow-AI/blob/master/tictactoe.ipynb",
     "pType": "1",
     "src": "res/tictactoe/tictactoe.html",
-    "numBtn": "1"
+    "numBtn": "2"
 },{
     "header": "Generate Handwritten digits",
     "pText": "Gain-Adversarial Neural Network which generates pictures of handwritten digits from noise!",
