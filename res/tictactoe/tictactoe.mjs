@@ -1,11 +1,38 @@
 const e = React.createElement
 
+function indexOfMax(arr) {
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    var max = arr[0];
+    var maxIndex = 0;
+
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+
+    return maxIndex;
+}
+
+var model;
+
+async function test() {
+    model = await tf.loadLayersModel('model.json');
+    console.log("success!")
+}
+
+test();
+
 class Square extends React.Component {
     constructor(props){
         super(props)
     }
     render(){
-        return e("button", {className: "square", onClick: this.props.onClick}, this.props.value)
+        return e("button", {className: "square", style: {border: "1px solid black", width: "30%", height: "30%"}, onClick: this.props.onClick}, this.props.value)
     }
 }
   
@@ -21,7 +48,7 @@ class Board extends React.Component {
     render() {
         return e(
             "div",
-            {},
+            {style: {width: "100%", height: "100%"}},
             e("div", {className: "board-row"}, this.renderSquare(0),this.renderSquare(1),this.renderSquare(2)),
             e("div", {className: "board-row"}, this.renderSquare(3),this.renderSquare(4),this.renderSquare(5)),
             e("div", {className: "board-row"}, this.renderSquare(6),this.renderSquare(7),this.renderSquare(8))
@@ -52,9 +79,15 @@ class Game extends React.Component {
             return;
         }
         this.board[i] = 1;
-        var prediction = model.predict(this.board)
-        console.log(prediction)
+        console.log(Array(this.board))
+        var prediction = model.predict(tf.tensor(Array(this.board)))
+
+        const oPos = indexOfMax(prediction.dataSync())
+
+        console.log(oPos)
+
         squares[i] = "X";
+        squares[oPos] = "O";
         this.setState({
             history: history.concat([
                 {
@@ -63,13 +96,6 @@ class Game extends React.Component {
             ]),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext
-        });
-    }
-
-    jumpTo(step) {
-        this.setState({
-            stepNumber: step,
-            xIsNext: (step % 2) === 0
         });
     }
 
@@ -82,11 +108,11 @@ class Game extends React.Component {
         if (winner) {
             status = "Winner: " + winner;
         } else {
-            status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+            status = "Next Turn";
         }
 
-        return e("div", {className: "game"}, 
-                    e("div", {className: "game-board"}, 
+        return e("div", {className: "game", style: {width: "100%", height: "100%"}}, 
+                    e("div", {className: "game-board", style: {width: "100%", height: "100%"}}, 
                         e(Board, {squares: current.squares, onClick: i => this.handleClick(i)})),
                     e("div", {className: "game-info"}, e("div", {}, status), null))
     }
