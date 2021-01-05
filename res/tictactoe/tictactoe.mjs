@@ -88,6 +88,8 @@ class Game extends React.Component {
         console.log(Array(this.board))
         var prediction = model.predict(tf.tensor(Array(this.board)))
 
+        console.log(prediction.dataSync(), this.board)
+
         const oPos = indexOfMax(prediction.dataSync())
 
         console.log(oPos)
