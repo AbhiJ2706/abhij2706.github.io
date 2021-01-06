@@ -17,7 +17,7 @@ var projectData =
     "b2Text": "View in Google Colab",
     "b2Color": "yellow",
     "link2": "https://colab.research.google.com/github/AbhiJ2706/tic-tac-toe-tensorflow-AI/blob/master/tictactoe.ipynb",
-    "pType": "1",
+    "pType": "2",
     "src": "https://hardcore-lumiere-18447c.netlify.app/",
     "numBtn": "2"
 },{
@@ -95,7 +95,7 @@ var projectData =
     "b2Color": "green", 
     "link1": "https://github.com/FRC2706",
     "link2": "https://github.com/AbhiJ2706?tab=repositories",
-    "pType": "1",
+    "pType": "2",
     "src": "res/trivia/trivia.html",
     "numBtn": "2"
 },];

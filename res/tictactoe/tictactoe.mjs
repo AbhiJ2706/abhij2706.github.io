@@ -98,7 +98,7 @@ class Game extends React.Component {
         squares[oPos] = "O";
 
         this.board[oPos] = -1;
-        
+
         this.setState({
             history: history.concat([
                 {
@@ -117,7 +117,7 @@ class Game extends React.Component {
 
         let status;
         if (winner) {
-            status = [e("p", {key: 0}, "Winner: " + winner), e("button", {key: 1}, "Play again")];
+            status = [e("p", {key: 0}, "Winner: " + winner), e("button", {onClick: () => location.reload(), key: 1}, "Play again")];
         } else {
             status = "Next Turn";
         }

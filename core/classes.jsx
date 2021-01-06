@@ -77,13 +77,14 @@ class ProjectTextBtnContainer extends React.Component {
 }
 
 class Scroller {
-    constructor(data){
-        this.cid = -1
+    constructor(data, idDelta){
+        this.finalCid = idDelta - 1
+        this.cid = idDelta - 1
         this.data = data
     }
 
     moveUp(){
-        if (this.cid > -1){
+        if (this.cid > this.finalCid){
             this.cid --;
             var newId = this.cid.toString();
             window.location.href = "#" + newId;

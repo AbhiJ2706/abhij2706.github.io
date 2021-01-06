@@ -1,4 +1,4 @@
-function projectDivCreate(projectData){
+function projectDivCreate(projectData, idStart){
     var toRender = [];
     console.log(projectData.length)
     for (var i = 0; i < projectData.length; i++){
@@ -30,9 +30,9 @@ function projectDivCreate(projectData){
                                                 numBtn: 2}, null)
         }
         if (i % 2 == 0){
-            entireDiv = e(ProjectDiv, {key : i, id: i, insideL: textDiv, insideR: dispDiv}, null)
+            entireDiv = e(ProjectDiv, {key : i, id: i + idStart, insideL: textDiv, insideR: dispDiv}, null)
         } else {
-            entireDiv = e(ProjectDiv, {key : i, id: i, insideL: dispDiv, insideR: textDiv}, null)
+            entireDiv = e(ProjectDiv, {key : i, id: i + idStart, insideL: dispDiv, insideR: textDiv}, null)
         }
         toRender.push(entireDiv)
         console.log(toRender)

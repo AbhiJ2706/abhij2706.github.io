@@ -1,7 +1,7 @@
 const domContainer = document.querySelector('#root');
 
-var postItems = projectDivCreate(projectData)
+const idStart = 0
 
-postItems.push(new Scroller(projectData).getButtons());
+var postItems = projectDivCreate(projectData, idStart)
 
 ReactDOM.render(postItems, domContainer)
