@@ -88,7 +88,7 @@ var projectData =
     "numBtn": "2"
 },{
     "header": "Games!",
-    "pText": "We all need to have some fun. As part of my CS courses, I programmed a variety of games, some for the browser, some for Android! These are pretty old and a bit glitchy, be warned.",
+    "pText": "We all need to have some fun. I programmed a variety of games, some for the browser, some for Android! Enjoy the trivia game! (be warned, the android game is old and a bit glitchy.)",
     "b1Text": "View on GitHub",
     "b2Text": "View on Google Play",
     "b1Color": "black", 
