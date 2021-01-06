@@ -18,7 +18,7 @@ var projectData =
     "b2Color": "yellow",
     "link2": "https://colab.research.google.com/github/AbhiJ2706/tic-tac-toe-tensorflow-AI/blob/master/tictactoe.ipynb",
     "pType": "1",
-    "src": "res/tictactoe/tictactoe.html",
+    "src": "https://hardcore-lumiere-18447c.netlify.app/",
     "numBtn": "2"
 },{
     "header": "Generate Handwritten digits",
