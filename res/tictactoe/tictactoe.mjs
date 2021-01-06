@@ -80,7 +80,7 @@ class Game extends React.Component {
     handleClick(i) {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
-        const squares = current.squares.slice();
+        var squares = current.squares.slice();
         if (calculateWinner(squares) || squares[i]) {
             return;
         }
@@ -97,22 +97,31 @@ class Game extends React.Component {
         squares[i] = "X";
 
         if (calculateWinner(squares)) {
-            return;
+            this.setState({
+                history: history.concat([
+                    {
+                    squares: squares
+                    }
+                ]),
+                stepNumber: history.length,
+                xIsNext: !this.state.xIsNext
+            });
+        } else {
+
+            squares[oPos] = "O";
+
+            this.board[oPos] = -1;
+
+            this.setState({
+                history: history.concat([
+                    {
+                    squares: squares
+                    }
+                ]),
+                stepNumber: history.length,
+                xIsNext: !this.state.xIsNext
+            });
         }
-
-        squares[oPos] = "O";
-
-        this.board[oPos] = -1;
-
-        this.setState({
-            history: history.concat([
-                {
-                squares: squares
-                }
-            ]),
-            stepNumber: history.length,
-            xIsNext: !this.state.xIsNext
-        });
     }
 
     render() {
