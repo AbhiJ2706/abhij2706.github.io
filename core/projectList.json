@@ -46,7 +46,7 @@ var projectData =
     "numBtn": "2"
 },{
     "header": "Lego EV3 Robots",
-    "pText": "Built and programmed an EV3 robot with omnidirectional drive, controlled remotely or autonomously using Python!",
+    "pText": "Built and programmed an EV3 robot with omnidirectional drive, controlled remotely or autonomously using Python! I also built more LEGO back in the day, which you can check out here: https://www.youtube.com/channel/UCRbthCq7fnI1ibCT-wqmvwA",
     "b1Text": "View on GitHub",
     "b2Text": "View Specifications",
     "b1Color": "black", 
