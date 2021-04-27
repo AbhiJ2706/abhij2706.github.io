@@ -1,7 +1,7 @@
 var projectData = 
 [{
     "header": "Computer Vision",
-    "pText": "Finds the distance and angle to a target in real-time, using OpenCV. Made to run on a Raspberry Pi, to be used in a project for the UN! I also worked on computer vision for FRC, pictured here.",
+    "pText": "Finds the distance and angle to a target in real-time, using OpenCV. Made to run on a Raspberry Pi, to be used in a project for the UN! I also worked on computer vision for FRC.",
     "b1Text": "View on GitHub",
     "b1Color": "black", 
     "link1": "https://github.com/AbhiJ2706/mvs_vision_demo",
@@ -34,7 +34,7 @@ var projectData =
     "numBtn": "2"
 },{
     "header": "Stock Prediction",
-    "pText": "Neural network built using LSTM that predicts stock trends! Takes metrics such as price trends, volume trends, and on-balance volume into account. Predictions are not to be trusted.",
+    "pText": "Neural network built using LSTM that predicts stock trends! Takes price trends, volume trends, and on-balance volume into account. Predictions are not to be trusted.",
     "b1Text": "View on GitHub",
     "b2Text": "View in Google Colab",
     "b1Color": "black", 
@@ -46,7 +46,7 @@ var projectData =
     "numBtn": "2"
 },{
     "header": "Lego EV3 Robots",
-    "pText": "Built and programmed an EV3 robot with omnidirectional drive, controlled remotely or autonomously using Python! I also built more LEGO back in the day, which you can check out here: https://www.youtube.com/channel/UCRbthCq7fnI1ibCT-wqmvwA",
+    "pText": "Built and programmed an EV3 robot with omnidirectional drive, controlled remotely or autonomously using Python!",
     "b1Text": "View on GitHub",
     "b2Text": "View Specifications",
     "b1Color": "black", 
@@ -88,7 +88,7 @@ var projectData =
     "numBtn": "2"
 },{
     "header": "Games!",
-    "pText": "We all need to have some fun. I programmed a variety of games, some for the browser, some for Android! Enjoy the trivia game! (be warned, the android game is old and a bit glitchy.)",
+    "pText": "We all need to have some fun. I programmed a variety of games, some for the browser, some for Android! (be warned, it is old and a bit glitchy.)",
     "b1Text": "View on GitHub",
     "b2Text": "View on Google Play",
     "b1Color": "black", 
