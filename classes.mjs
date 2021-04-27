@@ -23,10 +23,10 @@ class ProjectTextBtnContainer extends React.Component {
     render (){
         return e(
             'div',
-            {className: "plzwork ui segment", style: {height: "50%", width: "95%", margin:"2.5%", float: "left", backgroundColor: "#e5e5e5", borderRadius: "5%"}},
+            {className: "plzwork ui segment", style: {height: "50%", width: "95%", margin:"2.5%", float: "left", borderRadius: "10px"}},
             e("div", {style: {height: "50%", width: "100%"}},
                 e('h1', {style: {fontSize: "5vm", marginLeft: "4%", width: "92%", textAlign: 'center', color: "black"}}, this.props.headerText),
-                e('p', {style: {overflow: "scroll", marginLeft: "2%", marginRight: "2%", textAlign: 'center', width: '96%', color: "black"}}, this.props.pText)
+                e('p', {style: {marginLeft: "2%", marginRight: "2%", textAlign: 'center', width: '96%', color: "black"}}, this.props.pText)
             ), 
             e('div', {style: {
                                 height: '50%', 
@@ -37,19 +37,24 @@ class ProjectTextBtnContainer extends React.Component {
                          e('button', {className: "ui " + this.props.b1Color + " button", 
                                       onClick: () => {window.location.href = this.props.link1}, 
                                       style: {position: "relative", 
-                                              height: "40%", 
-                                              width: '100%', 
-                                              marginLeft:"0", 
-                                              marginRight:"0", 
-                                              marginTop: (this.props.numBtn == 1)? "25%" : "10%", 
-                                              marginBottom: (this.props.numBtn == 1)? "25%" : "0", 
+                                              height: "36%", 
+                                              width: '96%', 
+                                              marginLeft: "2%", 
+                                              marginRight:"2%", 
+                                              marginTop: (this.props.numBtn == 1)? "27%" : "12%", 
+                                              marginBottom: (this.props.numBtn == 1)? "27%" : "0", 
+                                              borderRadius: "10px"
                                             }}, this.props.b1Text),
                          (this.props.numBtn != 1)?
                          e('button', {className: "ui " + this.props.b2Color + " button", 
                                       onClick: () => {window.location.href = this.props.link2}, 
-                                      style: {height: "40%", 
-                                              width: '100%', 
-                                              marginBottom: "10%"
+                                      style: {height: "36%", 
+                                              width: '96%', 
+                                              marginLeft: "2%", 
+                                              marginRight:"2%", 
+                                              marginTop:"2%", 
+                                              marginBottom: "12%",
+                                              borderRadius: "10px"
                                             }}, this.props.b2Text) : null))
     }
 }
