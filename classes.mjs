@@ -25,8 +25,8 @@ class ProjectTextBtnContainer extends React.Component {
             'div',
             {className: "plzwork ui segment", style: {height: "50%", width: "95%", margin:"2.5%", float: "left", backgroundColor: "#e5e5e5", borderRadius: "5%"}},
             e("div", {style: {height: "50%", width: "100%"}},
-                e('h1', {style: {fontSize: "5vm", marginLeft: "10%", width: "80%", textAlign: 'center', color: "black"}}, this.props.headerText),
-                e('p', {style: {overflow: "scroll", marginLeft: "20%", marginRight: "20%", textAlign: 'center', width: '60%', color: "black"}}, this.props.pText)
+                e('h1', {style: {fontSize: "5vm", marginLeft: "4%", width: "92%", textAlign: 'center', color: "black"}}, this.props.headerText),
+                e('p', {style: {overflow: "scroll", marginLeft: "2%", marginRight: "2%", textAlign: 'center', width: '96%', color: "black"}}, this.props.pText)
             ), 
             e('div', {style: {
                                 height: '50%', 
