@@ -1,7 +1,6 @@
 <html>
     <head>
-        <meta charset="utf-8"/>
-        <title>Home- AbhiJ2706</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -15,55 +14,50 @@
         <meta name="header picture source" content="https://www.primeinspiration.com/wp-content/uploads/2019/04/pcb-board-1.jpg">
     </head>
     <body>
-        <div id="top" style="width: 100%; height: 60%; background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/pbg3.jpg'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover">          
-            <h1 style="text-align: center; top: 30%; font-size: 72px; color: white; margin: 0; position: relative">Abhinav Jain</h1>
-            <h3 style="text-align: center; top: 40%; font-size: 36px; color: white; margin: 0; position: relative">Student/Leader/Developer</h3>
+        <h1>
+            WEBSITE IS UNDER RENOVATION! SORRY
+        </h1>
+        <div id="root1">
+            <p>Div 1</p>
         </div>
-        <div id="menubar" class="ui secondary menu" style="margin-left: 10%; margin-right: 10%; width: 80%;">
-            <a class="active item" style="width: 33%">Home</button>
-            <a class="item" href="projects.html" style="width: 33%">Projects</button>
-            <a class="item"  style="width: 33%">Demos</button>
+        <div id="root2">
+            <p>Div 2</p>
         </div>
-        <div id="bottom" style="color: black; min-height: 0vh; display: flex; flex-direction: column; padding-bottom: 5%">
-            <div class="ui segment" style="width: 80%; margin-left: auto; margin-right: auto;">
-                <p style="font-size: 18px">Hello, and welcome to my website! I am Abhinav Jain, an aspiring developer! This is a website showcasing my work up to date. I've worked on a variety of projects using many different frameworks and languages such as</p>
-                <div style="display: flex; justify-content: center; padding-top: 0.5%">
-                    <button class="ui yellow button">Python</button>
-                    <button class="ui blue button">Java</button>
-                    <button class="ui yellow button">Javascript</button>
-                    <button class="ui orange button">HTML</button>
-                    <button class="ui blue button">CSS</button>
-                    <button class="ui green button">Android</button>
-                    <button class="ui orange button">Tensorflow</button>
-                    <button class="ui red button">OpenCV</button>
-                    <button class="ui green button">Node.js</button>
-                </div>
-                <p style="font-size: 18px; padding-top: 2%">and more!</p>
-            </div>
-            <div class="ui segment" style="width: 80%; margin-left: auto; margin-right: auto ">
-                <p style="font-size: 18px">I had a whole lot of fun developing all of these projects, ranging from games, to computer vision, to artificial intelligence! </p>
-                <button class="massive blue ui button" style="margin-left: 40%; margin-right: 40%; width: 20%" onclick="window.location.href='projects.html'">See my projects</button>
-            </div>
-            <div class="ui segment" style="width: 80%; margin-left: auto; margin-right: auto ">
-                <p style="font-size: 18px">If you're more interested in the code behind these projects, you can check out my GitHub. Links to each individual project's code (and fun demos!) are under the projects tab.</p>
-                <button class="massive black ui button" style="margin-left: 40%; margin-right: 40%; width: 20%" onclick="window.location.href='https://github.com/abhij2706'">Go to my GitHub</button>
-            </div>
-            <h1 style="text-align: center">Thanks for visiting!</h1>
+        <div id="root3">
+            <p>Div 3</p>
         </div>
     </body>
-    <footer style="background-color: #1E1E1F; height: 30%; position: relative; left:0; bottom:0; right:0; display:block">
-        <div class="ui buttons" style="width: 24%; margin-left: 38%; margin-right: 38%">
-            <div class="massive ui button" style="background-color:#1E1E1F !important; float:left" tabindex="0" onclick='{window.location.href="https://github.com/AbhiJ2706"}'>
-                <div class="visible content">
-                    <i class="github icon" style="color: #ffffff !important"></i>
-                </div>
-            </div>
-            <div class="massive ui button" style="background-color:#1E1E1F !important; float:right" tabindex="0" onclick='{window.location.href="https://www.linkedin.com/in/abhi-jain-9057961b7/"}'>
-                <div class="visible content">
-                    <i class="linkedin icon" style="color: #ffffff !important"></i>
-                </div>
-            </div>
-        </div>
-        <p style="color: #ffffff !important; text-align: center; padding-top: 3%">Made with &hearts; using React and Semantic UI</p>
-    </footer>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        div {
+            width:33%; 
+            background-color:#e5e5e5; 
+            
+            float:left;
+            margin-bottom: 5%;
+        }
+        @media only screen and (max-width:1000px) {
+            div {
+                width:100%;
+            }
+        }
+    </style>
+    <script src="projects.json"></script>
+    <script src="classes.mjs"></script>
+    <script src="gen.mjs"></script>
+    <script>
+        const domContainer1 = document.querySelector('#root1');
+        const domContainer2 = document.querySelector('#root2');
+        const domContainer3 = document.querySelector('#root3');
+
+        const idStart = 0
+
+        var postItems = projectDivCreate(projectData, idStart)
+
+        ReactDOM.render(postItems[0], domContainer1)
+        ReactDOM.render(postItems[1], domContainer2)
+        ReactDOM.render(postItems[2], domContainer3)
+    </script>
 </html>

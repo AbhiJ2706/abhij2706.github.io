@@ -1,16 +1,10 @@
 function projectDivCreate(projectData, idStart){
-    var toRender = [];
+    var toRender = [[],[],[]];
+    var rotate = 0
     console.log(projectData.length)
     for (var i = 0; i < projectData.length; i++){
-        var entireDiv;
         var textDiv;
-        var dispDiv;
         var inputData = projectData[i];
-        if (inputData.pType == "0"){
-            dispDiv = e(ProjectPicContainer, {src: inputData.src}, null)
-        } else {
-            dispDiv = e(ProjectDispContainer, {src: inputData.src}, null)
-        }
         if (inputData.numBtn == 1){
             textDiv = e(ProjectTextBtnContainer, {headerText: inputData.header, 
                                                 pText: inputData.pText,
@@ -29,13 +23,12 @@ function projectDivCreate(projectData, idStart){
                                                 link2: inputData.link2,
                                                 numBtn: 2}, null)
         }
-        if (i % 2 == 0){
-            entireDiv = e(ProjectDiv, {key : i, id: i + idStart, insideL: textDiv, insideR: dispDiv}, null)
-        } else {
-            entireDiv = e(ProjectDiv, {key : i, id: i + idStart, insideL: dispDiv, insideR: textDiv}, null)
-        }
-        toRender.push(entireDiv)
+        toRender[rotate].push(textDiv)
         console.log(toRender)
+        rotate++
+        if (rotate > 2) {
+            rotate = 0
+        }
     }
     return toRender
 }
