@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+        <meta name="header picture source" content="https://www.primeinspiration.com/wp-content/uploads/2019/04/pcb-board-1.jpg">
+        
+        <meta name="header picture source" content="https://images.cdn3.stockunlimited.net/preview1300/circuit-board-design_1648205.jpg">
+    </head>
+    <body>
+        <div id="-1" class="ui secondary menu">
+            <a class="item" href="index.html">Home</button>
+            <a class="active item">Projects</button>
+            <a class="item">Demos</button>
+            <a class="item">Resume</button>
+        </div>
+        <div id="top" style="width: 100%; height: 60%; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover">          
+            <h1 style="text-align: center; top: 30%; font-size: 72px; color: white; margin: 0; position: relative">Projects</h1>
+            <h3 style="text-align: center; top: 40%; font-size: 36px; color: white; margin: 0; position: relative">All the good stuff!</h3>
+        </div>
+        <div id="desc" style="width: 80%; margin-left: auto; margin-right: auto; border-radius: 10px" class="ui segment">
+            <p style="font-size: 18px; color: black">Here is a gallery of my projects! I programmed most of these for my high school CS classes, and others just for fun. Some have interactive demos, while others have links to Google Colab notebooks, so you can play with the code there and read more in-depth about the projects. Hope you enjoy!</p>
+        </div>
+        <div id="root1">
+            <p>Div 1</p>
+        </div>
+        <div id="root2">
+            <p>Div 2</p>
+        </div>
+        <div id="root3">
+            <p>Div 3</p>
+        </div>
+        <div style="min-height: 0vh; width: 100%; display: flex; flex-direction: column; background-color: #1E1E1F;"></div>
+    </body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #root1, #root2, #root3, .plzwork {
+            width: 33%; 
+            float: left;
+            margin-bottom: 5%;
+        }
+        @media only screen and (max-width:1000px) {
+            #root1, #root2, #root3, .plzwork {
+                width:100%;
+            }
+        }
+        body {
+            background-image: linear-gradient(-45deg, rgba(238, 119, 82, 0.5), rgba(231, 60, 126, 0.5), rgba(35, 166, 213, 0.5), rgba(35, 213, 171, 0.5));
+            background-size: 10000% 10000%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+    <script src="projects.json"></script>
+    <script src="classes.mjs"></script>
+    <script src="gen.mjs"></script>
+    <script>
+        const domContainer1 = document.querySelector('#root1');
+        const domContainer2 = document.querySelector('#root2');
+        const domContainer3 = document.querySelector('#root3');
+
+        const idStart = 0
+
+        var postItems = projectDivCreate(projectData, idStart)
+
+        ReactDOM.render(postItems[0], domContainer1)
+        ReactDOM.render(postItems[1], domContainer2)
+        ReactDOM.render(postItems[2], domContainer3)
+    </script>
+    <footer id="hello" style="background-color: #1E1E1F; height: 30%; position: relative; left:0; bottom:0; right:0; display:block">
+        <div style="margin: 0 auto; display: block; text-align: center;">
+            <div class="ui buttons">
+                <div class="massive ui button" style="background-color:#1E1E1F !important" tabindex="0" onclick='{window.location.href="https://github.com/AbhiJ2706"}'>
+                    <div class="visible content">
+                        <i class="github icon" style="color: #ffffff !important"></i>
+                    </div>
+                </div>
+                <div class="massive ui button" style="background-color:#1E1E1F !important" tabindex="0" onclick='{window.location.href="mailto:abhijain1778@gmail.com"}'>
+                    <div class="visible content">
+                        <i class="envelope outline icon" style="color: #ffffff !important"></i>
+                    </div>
+                </div>
+                <div class="massive ui button" style="background-color:#1E1E1F !important" tabindex="0" onclick='{window.location.href="https://www.linkedin.com/in/abhi-jain-9057961b7/"}'>
+                    <div class="visible content">
+                        <i class="linkedin icon" style="color: #ffffff !important"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="color: #ffffff !important; text-align: center; padding-top: 3%">Made with &hearts; using React and Semantic UI <br> Abhinav Jain</p>
+    </footer>
+</html>
