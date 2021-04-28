@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+        <link
+            async
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.css"
+        />
+        <script
+            async
+            src="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.js"
+        ></script>
+    </head>
+
+    <body style="border: 1px solid black; overflow: scroll">
+        <div id="intro">
+            <h1 style="margin-left: 5%; margin-right: 5%; font-size: 72px; text-align: center">Tic-Tac-Toe vs Neural Network!</h1>
+            <p style="text-align: center; margin-left: 5%; margin-right: 5%; ">
+                Disclaimer: this AI isn't very good. A neural network for playing games works 
+                much better when using a technique called reinforcement learning, and this one doesn't use that.
+                It may (occasionally) move on a square that has your own piece or its own piece, and this is just a quirk of 
+                AI that could be solved by adding more test data, but I dont' have any more. The key here is to watch
+                how it is able to recognize and block lines.
+            </p>
+            <button class="ui red button" style="width: 20%; margin-left: 40%; margin-right: 40%" onclick="play()">Play</button>
+        </div>
+        <div style="width: 100%; overflow: hidden; height: 100%; visibility: hidden" id="root"></div>
+        <script src="tictactoe.mjs"></script>
+        <style>
+            body {
+                font: 14px "Century Gothic", Futura, sans-serif;
+            }
+
+            .square {
+                background: #fff;
+                float: left;
+                width: "30%"; 
+                height: "30%";
+                font-size: 48px;
+                text-align: center;
+            }
+
+            .square:focus {
+                outline: none;
+            }
+
+            .kbd-navigation .square:focus {
+                background: #000000;
+            }
+
+            .game {
+                display: flex;
+                flex-direction: row;
+            }
+        </style>
+    </body>
+</html>

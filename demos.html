@@ -26,17 +26,14 @@
             <h1 style="text-align: center; top: 30%; font-size: 10vmin; color: white; margin: 0; position: relative">Projects</h1>
             <h3 style="text-align: center; top: 40%; font-size: 5vmin; color: white; margin: 0; position: relative">All the good stuff!</h3>
         </div>
-        <div id="desc" style="width: 80%; margin-left: auto; margin-right: auto; border-radius: 10px" class="ui segment">
+        <div id="desc" style="width: 80%; margin-left: auto; margin-right: auto; margin-bottom: 4%; border-radius: 10px" class="ui segment">
             <p style="font-size: 18px; color: black">Here is a gallery of my projects! I programmed most of these for my high school CS classes, and others just for fun. Some have interactive demos, while others have links to Google Colab notebooks, so you can play with the code there and read more in-depth about the projects. Hope you enjoy!</p>
         </div>
-        <div id="root1">
-            <p>Div 1</p>
+        <div id="root1" style="width: 100%; height: 100%">
+            <embed style="width: 50vmax; height:50vmax; margin: 0 auto; display: block;" src="trivia/trivia.html">
         </div>
-        <div id="root2">
-            <p>Div 2</p>
-        </div>
-        <div id="root3">
-            <p>Div 3</p>
+        <div id="root2" style="width: 100%; height: 100%">
+            <embed style="width: 50vmax; height:50vmax; margin: 0 auto; display: block; overflow: scroll" src="https://hardcore-lumiere-18447c.netlify.app/">
         </div>
         <div style="min-height: 0vh; width: 100%; display: flex; flex-direction: column; background-color: #1E1E1F;"></div>
     </body>
@@ -44,14 +41,13 @@
         * {
             box-sizing: border-box;
         }
-        #root1, #root2, #root3, .plzwork {
-            width: 33%; 
+        #root1, #root2 {
             float: left;
             margin-bottom: 5%;
         }
         @media only screen and (max-width:1000px) {
-            #root1, #root2, #root3, .plzwork {
-                width:100%;
+            #root1, #root2 {
+                width: 100%;
             }
         }
         body {
@@ -72,22 +68,6 @@
             }
         }
     </style>
-    <script src="projects.json"></script>
-    <script src="classes.mjs"></script>
-    <script src="gen.mjs"></script>
-    <script>
-        const domContainer1 = document.querySelector('#root1');
-        const domContainer2 = document.querySelector('#root2');
-        const domContainer3 = document.querySelector('#root3');
-
-        const idStart = 0
-
-        var postItems = projectDivCreate(projectData, idStart)
-
-        ReactDOM.render(postItems[0], domContainer1)
-        ReactDOM.render(postItems[1], domContainer2)
-        ReactDOM.render(postItems[2], domContainer3)
-    </script>
     <footer id="hello" style="background-color: #1E1E1F; height: 30%; position: relative; left:0; bottom:0; right:0; display:block">
         <div style="margin: 0 auto; display: block; text-align: center;">
             <div class="ui buttons">
