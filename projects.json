@@ -1,5 +1,16 @@
 var projectData = 
 [{
+    "header": "This is not a newspaper",
+    "pText": "My first hackathon project, a new, satisfying way of aggregating and displaying news!",
+    "b1Text": "View on Github",
+    "b1Color": "black", 
+    "link1": "https://github.com/AbhiJ2706/tohacks2021",
+    "b2Text": "See DevPost",
+    "b2Color": "dark blue",
+    "link2": "https://devpost.com/software/this-is-not-a-newspaper?ref_content=user-portfolio&ref_feature=in_progress",
+    "pType": "0",
+    "numBtn": "2"
+},{
     "header": "Computer Vision",
     "pText": "Finds the distance and angle to a target in real-time, using OpenCV. Made to run on a Raspberry Pi, to be used in a project for the UN! I also worked on computer vision for FRC.",
     "b1Text": "View on GitHub",
