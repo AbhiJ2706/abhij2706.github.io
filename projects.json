@@ -1,5 +1,16 @@
 var projectData = 
 [{
+    "header": "PiggyBank",
+    "pText": "A winning project of Enghack 2021, Piggybank is an innovative new banking system for kids which teaches them to save and invest their money!",
+    "b1Text": "See Devpost",
+    "b1Color": "blue", 
+    "link1": "https://devpost.com/software/piggy-bank-qulyxt",
+    "b2Text": "Go to PiggyBank!",
+    "b2Color": "pink",
+    "link2": "https://piggybank.vercel.app",
+    "pType": "0",
+    "numBtn": "2"
+},{
     "header": "This is not a newspaper",
     "pText": "My first hackathon project, a new, satisfying way of aggregating and displaying news!",
     "b1Text": "View on Github",
