@@ -5,10 +5,17 @@
     <link>https://abhij2706.github.io/blog</link>
     <description>Learning by building — notebooks on machine learning, software engineering, and more.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 GMT</lastBuildDate>
     <managingEditor>a252jain@uwaterloo.ca (Abhinav Jain)</managingEditor>
     <webMaster>a252jain@uwaterloo.ca (Abhinav Jain)</webMaster>
     <atom:link href="https://abhij2706.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Dynamic Programming, For Real This Time</title>
+      <link>https://abhij2706.github.io/notebook/dynamic_programming.ipynb</link>
+      <guid isPermaLink="true">https://abhij2706.github.io/notebook/dynamic_programming.ipynb</guid>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Maybe this time I won&apos;t rely on my memoization skills...</description>
+    </item>
     <item>
       <title>Making Photos Look Good is Easy, Actually (Part 2)</title>
       <link>https://abhij2706.github.io/notebook/editor_2.ipynb</link>
